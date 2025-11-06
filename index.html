@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Tummy Restaurant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">🍽️ Happy Tummy Restaurant</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#orders">Orders</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home" class="hero">
+    <img src="yummy.png" alt="Happy Tummy Restaurant">
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-filters">
+      <button onclick="filterMenu('all')">All</button>
+      <button onclick="filterMenu('starters')">Starters</button>
+      <button onclick="filterMenu('main')">Main Course</button>
+      <button onclick="filterMenu('desserts')">Desserts</button>
+      <button onclick="filterMenu('drinks')">Drinks</button>
+    </div>
+
+    <div class="menu-container" id="menu-container">
+      <!-- Menu Items -->
+      <div class="menu-item" data-category="starters">
+        <img src="chicken manchurian.jpeg" alt="chicken manchurian">
+        <h3>chicken manchurian</h3>
+        <p class="price"> ₹ 250</p>
+        <button onclick="addToCart('Chicken Manchurian', 250)">Add to Order</button>
+      </div>
+      <div class="menu-item" data-category="starters">
+        <img src="chicken schezwan.jpeg" alt="chicken schezwan">
+        <h3>chicken schezwan</h3>
+        <p class="price"> ₹ 250</p>
+        <button onclick="addToCart('Chicken schezwan', 250)">Add to Order</button>
+      </div>
+      <div class="menu-item" data-category="main">
+        <img src="chicken.jpeg" alt="Biryani">
+        <h3>Biryani</h3>
+        <p class="price">₹ 300</p>
+        <button onclick="addToCart('Biryani', 300)">Add to Order</button>
+      </div>
+
+      <div class="menu-item" data-category="desserts">
+        <img src="caramel.jpeg" alt="caramel">
+        <h3>caramel</h3>
+        <p class="price">₹ 150</p>
+        <button onclick="addToCart('caramel', 150)">Add to Order</button>
+      </div>
+
+      <div class="menu-item" data-category="drinks">
+        <img src="Blue-Lagoon.jpg" alt="mocktail">
+        <h3>Blue Lagoon Mocktail</h3>
+        <p class="price">₹ 200</p>
+        <button onclick="addToCart('Blue Lagoon', 200)">Add to Order</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Orders Section -->
+  <section id="orders">
+    <h2>Your Orders</h2>
+    <div id="cart-items"></div>
+    <p id="total-price">Total: ₹0.00</p>
+    <button id="place-order" onclick="placeOrder()">Place Order</button>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <p>📍 Address: 123 Flavor Street, Foodville</p>
+      <p>📞 Phone: +1 (555) 987-6543</p>
+      <p>📧 Email: contact@happytummy.com</p>
+    </div>
+    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you! We’ll get back to you soon.');">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Happy Tummy Restaurant. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
